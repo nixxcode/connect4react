@@ -33,11 +33,28 @@ body {
     cursor: pointer;
 }
 
-.white {
+.circle {
     height: 4.5rem;
     width: 4.5rem;
+    border-radius: 1500rem;   
+}
+
+.white {
     background-color: #FFF;
-    border-radius: 1500rem;
+}
+
+.red {
+    background-color: red;
+    transition: background-color 0.5s;
+}
+  
+.yellow {
+    background-color: yellow;
+    transition: background-color 0.5s;
+}
+
+.game-board {
+    margin-top: 3rem;
 }
 
 .game-board > table {
@@ -78,15 +95,10 @@ header > div > h1 {
     height: 5rem;
 }
 
-
-
-
 main {
     flex: 1;
+    margin-top: 3em;
 }
-
-
-
 
 footer {
     font-size: 1.2rem;
@@ -100,6 +112,15 @@ footer {
     color: white;
 }
 
+button {
+    width: 9rem;
+    height: 3rem;
+    border: none;
+    
+    font-size: 1.2em;
+    color: white;
+    background: rgb(74, 36, 146);;  /* fallback for old browsers */
+}
 
 @media only screen and (max-width: 720px) {
     .cell {
@@ -107,7 +128,7 @@ footer {
         width: 4rem;
     }
 
-    .white {
+    .circle {
         height: 3rem;
         width: 3rem;
     }
