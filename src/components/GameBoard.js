@@ -1,68 +1,19 @@
 import React from 'react'
-import GameCell from './GameCell'
+import GameRow from './GameRow'
 
-function GameBoard() {
+function GameBoard(props) {
+    console.log(props)
+    const rows = props.gameState.board.map((row, rowIndex) => {
+        return (
+            <GameRow key={rowIndex} rowIndex={rowIndex} row={row} onCellClick={props.onCellClick} />
+        )
+    })
+    
     return (
         <div className="game-board">
             <table>
-                <thead></thead>
-                
-                <tbody>
-                    <tr>
-                        <td><GameCell /></td>
-                        <td><GameCell /></td>
-                        <td><GameCell /></td>
-                        <td><GameCell /></td>
-                        <td><GameCell /></td>
-                        <td><GameCell /></td>
-                        <td><GameCell /></td>
-                    </tr>   
-                    <tr>
-                        <td><GameCell /></td>
-                        <td><GameCell /></td>
-                        <td><GameCell /></td>
-                        <td><GameCell /></td>
-                        <td><GameCell /></td>
-                        <td><GameCell /></td>
-                        <td><GameCell /></td>
-                    </tr>
-                    <tr>
-                        <td><GameCell /></td>
-                        <td><GameCell /></td>
-                        <td><GameCell /></td>
-                        <td><GameCell /></td>
-                        <td><GameCell /></td>
-                        <td><GameCell /></td>
-                        <td><GameCell /></td>
-                    </tr>
-                    <tr>
-                        <td><GameCell /></td>
-                        <td><GameCell /></td>
-                        <td><GameCell /></td>
-                        <td><GameCell /></td>
-                        <td><GameCell /></td>
-                        <td><GameCell /></td>
-                        <td><GameCell /></td>
-                    </tr>
-                    <tr>
-                        <td><GameCell /></td>
-                        <td><GameCell /></td>
-                        <td><GameCell /></td>
-                        <td><GameCell /></td>
-                        <td><GameCell /></td>
-                        <td><GameCell /></td>
-                        <td><GameCell /></td>
-                    </tr>
-                    <tr>
-                        <td><GameCell /></td>
-                        <td><GameCell /></td>
-                        <td><GameCell /></td>
-                        <td><GameCell /></td>
-                        <td><GameCell /></td>
-                        <td><GameCell /></td>
-                        <td><GameCell /></td>
-                    </tr>
-                </tbody>
+                <thead></thead>  
+                <tbody>{rows}</tbody>
             </table>
         </div>
     )

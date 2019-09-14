@@ -1,12 +1,12 @@
 import React from 'react'
 import GameBoard from './GameBoard'
 
-function MainContent() {
+function MainContent(props) {
     return (
         <main className="justify-center">
             <div className="width-limit">
-                <h1>Game Board goes hya!</h1>
-                <GameBoard />
+                <button type="button" onClick={() => props.onNewGame()}>New Game</button>
+                <GameBoard gameState={props.gameState} onCellClick={props.onCellClick} />
             </div>
         </main>
     )

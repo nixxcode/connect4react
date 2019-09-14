@@ -1,12 +1,28 @@
 import React from 'react'
 
-function GameCell() {
+function GameCell(props) {
+    let colour = "";
+    switch (props.value) {
+        case 0: 
+            colour = "white"
+            break
+        case 1:
+            colour = "red"
+            break
+        case 2:
+            colour = "yellow"
+            break
+        default:
+            colour = "white"
+    }
+    
     return (
-        <div className="cell">
-            <div className="white">
-                
+        <td onClick={() => props.onCellClick(props.rowIndex, props.colIndex)}>
+            <div className="cell" row={props.rowIndex} col={props.colIndex}>
+                <div className={`circle ${colour}`} >
+                </div>
             </div>
-        </div>
+        </td> 
     )
 }
 
