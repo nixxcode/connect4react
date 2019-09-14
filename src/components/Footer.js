@@ -4,7 +4,7 @@ function Footer() {
     return (
         <footer className="justify-center">
             <div className="width-limit">
-                <h1>This be FOOTA!</h1>
+                <span>This be STICKY FOOTA!</span>
             </div>
         </footer>
     )
