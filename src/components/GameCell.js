@@ -17,7 +17,7 @@ function GameCell(props) {
     }
     
     return (
-        <td onClick={() => props.onCellClick(props.rowIndex, props.colIndex)}>
+        <td onClick={() => props.onCellClick(props.colIndex)}>
             <div className="cell" row={props.rowIndex} col={props.colIndex}>
                 <div className={`circle ${colour}`} >
                 </div>
