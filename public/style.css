@@ -122,6 +122,10 @@ button {
     background: rgb(74, 36, 146);;  /* fallback for old browsers */
 }
 
+table {
+    border-spacing: 0;
+}
+
 @media only screen and (max-width: 720px) {
     .cell {
         height: 4rem;
