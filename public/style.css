@@ -45,22 +45,33 @@ body {
 
 .red {
     background-color: red;
-    transition: background-color 0.5s;
+    transition: background-color 1s;
 }
   
 .yellow {
     background-color: yellow;
-    transition: background-color 0.5s;
+    transition: background-color 1s;
 }
 
 .game-board {
-    margin-top: 3rem;
+    margin-top: 1.5rem;
 }
 
 .game-board > table {
     text-align: center;
     justify-content: center;
     display: flex;  
+}
+
+.info-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.info-area > h1 {
+    width: 14rem;
 }
 
 header {
@@ -97,7 +108,7 @@ header > div > h1 {
 
 main {
     flex: 1;
-    margin-top: 3em;
+    margin-top: 1.5em;
 }
 
 footer {
