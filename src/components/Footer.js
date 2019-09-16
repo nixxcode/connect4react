@@ -4,7 +4,7 @@ function Footer() {
     return (
         <footer className="justify-center">
             <div className="width-limit">
-                <span>This be STICKY FOOTA!</span>
+                <span>Connect 4 React 2019 © Dominik Petrovic</span>
             </div>
         </footer>
     )
