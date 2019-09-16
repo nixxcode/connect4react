@@ -9,6 +9,8 @@ class App extends React.Component {
 		super()
 		const gameBoard = this.initBoard()
 
+		// 1 is red player
+		// 2 is yellow player
 		this.state = {
 			currentPlayer: 1, 
 			board: gameBoard,
@@ -18,7 +20,6 @@ class App extends React.Component {
 	}
 
 	newGame = () => {
-		//console.log("Clicked from app!");
 		const gameBoard = this.initBoard()
 		
 		this.setState({
@@ -29,6 +30,10 @@ class App extends React.Component {
 		})
 	}
 	
+	// Create a new 6*7 array initialized with zeroes to represent the game board
+	// 0 is neutral/empty
+	// 1 is red
+	// 2 is yellow
 	initBoard = () => {
 		let board = []
 		for(let r = 0; r < 6; r++) {
@@ -57,23 +62,27 @@ class App extends React.Component {
 		// All cells in column have been filled
 		if(row <= -1) return 
 		
+		// Mark clicked cell with current player's number
 		const player = this.state.currentPlayer
-
 		let gameBoard = this.state.board
 		gameBoard[row][col] = player
 
+		// Check victory conditions first, then draw conditions
 		const victory = this.isVictory(player)
 		const draw = this.isDraw()
 
-		// Update board
+		// Update game state
 		this.setState({
 			board: gameBoard,
 			gameOver: victory ? true : draw,
+			currentPlayer: player === 1 ? 2 : 1,
+
+			/* Sets game status message. Checks for victory first, then draw.
+			If neither applies, it simply prints out whose turn it is. */
 			message: victory ? 
 				(player === 1 ? "RED Wins!" : "YELLOW Wins!") : 
 				draw ? "DRAW!" :
-				player === 1 ? "YELLOW turn" : "RED turn",
-			currentPlayer: player === 1 ? 2 : 1
+				(player === 1 ? "YELLOW turn" : "RED turn")	
 		})
 	}
 
@@ -84,8 +93,7 @@ class App extends React.Component {
 		const dlWin = this.checkDiagonalLeft(player)
 
 		if(hzWin || vWin || drWin || dlWin) return true
-		
-		return false
+		else return false
 	}
 
 	isDraw = () => {

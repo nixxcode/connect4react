@@ -1,6 +1,7 @@
 import React from 'react'
 import GameCell from './GameCell'
 
+// Get all cells present in this row and render them in a <tr> element
 function GameRow(props) {
     const cells = props.row.map((cell, index) => {
         return (
